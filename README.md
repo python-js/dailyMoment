@@ -1,2 +1,11 @@
 # dailyMoment
-使用angularJs，制作的一个手机端网页。
+This is a project for angularJs
+
+	# Clone the code into your local repository
+
+	# install dependencies
+	bower install
+
+	#Need to open the server, and then open the page in the server
+
+
