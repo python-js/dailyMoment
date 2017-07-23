@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>豆瓣一刻</title>
+	<link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="./public/less/main.css">
+	<!-- 原始的写法 -->
+	<!-- <script>
+		document.querySelector('html').style.fontSize = window.screen.width / 20 + 'px';
+		window.onresize = function(){
+			document.querySelector('html').style.fontSize = window.screen.width / 20 + 'px';
+		}
+	</script> -->
+	<!-- 引入了判断页面大小尺寸的封装函数 -->
+	<script src="./public/libs/less.js"></script>
+	
+	<script src="./bower_components/angular/angular.js"></script>
+	<script src="./bower_components/angular-route/angular-route.js"></script>
+	<!--<script src="./bower_components/angular-animate/angular-animate.js"></script>-->
+	<script src="./scripts/app.js"></script>
+	<script src="./scripts/controller.js"></script>
+	<script src="./scripts/directives.js"></script>
+</head>
+<body ng-app="yikeApp">
+	<div class="viewport">
+		<!-- 侧边导航 -->
+		<div ng-include="'./views/navs.html'" ng-controller="NavsController"></div>
+		<div class="container">
+			<!-- 头部 -->
+			<div ng-class="{header: true, collapse: collapsed}">
+				<a href="javascript:;" ng-click="toggle()" class="menu icon-menu"></a>
+				<h2>今日一刻</h2>
+				<a href="javascript:;" class="search icon-search"></a>
+			</div>
+			<!-- 主体 -->
+			<div class="body" ng-class="{body: true, collapse: collapsed}">
+				<div loading  src="./public/images/loading.gif" ng-hide="loaded" ng-class="{loading:true}"></div>
+				<div ng-view></div>
+			</div>
+		</div>
+	</div>
+</body>
+<!-- <script src="./public/libs/toggle.js"></script> -->
+</html>

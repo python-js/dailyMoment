@@ -1,0 +1,22 @@
+<div class="item" ng-show="loaded">
+	<!-- 日期分类 -->
+	<div class="mark">{{date|date:'ddMMM'}}</div>
+	<ul class="posts large">
+		<!-- 文章 -->
+		<li ng-repeat="data in datas">
+			<span href="javascript:;" class="tag" ng-if="data.column.name">{{data.column.name}}</span>
+			<div class="cont">
+				<h3>{{data.title}}</h3>
+				<div class="brief">
+					<p ng-class="{only:data.display_style == 10001}" ng-if="data.display_style != 10003">{{data.abstract}}</p>
+					<div class="thumb" ng-if="data.display_style == 10002">
+						<img ng-src="{{data.thumbs[0].small.url}}" alt="">
+					</div>
+					<div class="gallery" ng-if="data.display_style == 10003">
+						<img ng-src="{{data.thumbs[0].small.url}}" alt="">
+					</div>
+				</div>							
+			</div>
+		</li>
+	</ul>
+</div>
